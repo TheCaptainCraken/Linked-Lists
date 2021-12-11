@@ -13,8 +13,8 @@ bool Push(Node** head_pointer, int val);
 int Pop(Node** head_pointer);
 /* deletes the last element of the list and returns its value */
 int BackPop(Node** head_pointer);
-/* creates a string from the list */
-char* ListToString(Node* head);
+/* prints the list to the standard output */
+void PrintList(Node* head, const char* separator);
 /* creates an array on the heap from the list */
 int* ListToArray(Node* head, int* length);
 /* finds the element corresponding to an index (returns -1 if the index is invalid) */

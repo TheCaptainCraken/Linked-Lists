@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "LinkedLists.h"
 
 struct node_s {
@@ -30,8 +31,9 @@ int GetListLength(Node* head) {
 bool Append(Node** head_pointer, int val) {
     int length = GetListLength(*head_pointer);
     if (length == 0) {
-        head_pointer = CreateNode(val);
-        return true;
+        *head_pointer = CreateNode(val);
+        if (*head_pointer == NULL) { return false; }
+        else { return true; }
     }
     else {
         Node* new_node = CreateNode(val);
@@ -43,4 +45,13 @@ bool Append(Node** head_pointer, int val) {
         current->next = new_node;
         return true;
     }
+}
+
+void PrintList(Node* head, const char* separator) {
+    Node* current = head;
+    while (current->next != NULL) {
+        printf("%d%s", current->val, separator);
+        current = current->next;
+    }
+    printf("%d\n", current->val);
 }
