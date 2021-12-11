@@ -55,3 +55,18 @@ void PrintList(Node* head, const char* separator) {
     }
     printf("%d\n", current->val);
 }
+
+bool Push(Node** head_pointer, int val) {
+
+    if (*head_pointer == NULL) {
+        *head_pointer = CreateNode(val);
+        if (*head_pointer == NULL) { return false; }
+        else { return true; }
+    }
+
+    Node* new_node = CreateNode(val);
+    if (new_node == NULL) { return false; }
+    new_node->next = *head_pointer;
+    *head_pointer = new_node;
+    return true;
+}
