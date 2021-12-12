@@ -20,8 +20,8 @@ int* ListToArray(Node* head, int* length);
 /* finds the element corresponding to an index (returns -1 if the index is invalid) */
 int FindFromIndex(Node* head, int index);
 /* deletes an element based on its index in the list */
-bool DeleteFromIndex(Node** head, int index);
+bool DeleteFromIndex(Node** head_pointer, int index);
 /* deletes the list */
-void DeleteList(Node** head);
+void DeleteList(Node** head_pointer);
 /* returns the length of a list */
 int GetListLength(Node* head);
